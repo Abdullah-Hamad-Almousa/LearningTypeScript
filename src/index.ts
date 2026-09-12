@@ -1,47 +1,30 @@
-//Array and object literals
+//Functions
 
-let names: string[] = ['Abdullah', 'Ali', 'Ahmad', 'Mohammed']
-let ages: number[] = [24, 25, 27, 30]
-
-names.push('Fahad', 'Faris')
-ages.push(26, 28, 29)
-
-let nameBowser= 'Bowser'
-
-names.push(nameBowser)
-
-let fruits = ['Banana', 'Orange', 'Apple']
-
-fruits.push('Peach')
-
-const f = fruits[2]
-
-let thing = [1, true, 'hello']
-
-const t = thing[0]
-
-//Object literals
-
-let user : {
-    firstName: string,
-    age: number,
-    id: number,
-} = {
-    firstName: 'Bowser',
-    age: 41,
-    id: 0
+function addTwoNumbers(a : number, b : number): number {
+    return a + b
 }
 
-user.firstName = 'Lion'
-user.age = 57
-user.id = 1
-
-//Type inference with object literals
-
-let person = {
-    name: 'Abdullah',
-    score: 27
+const subTwoNumbers = (a: number, b: number): number => {
+    return a - b
 }
 
-person.name = 'Almousa'
-person.score = 91
+addTwoNumbers(3, 9)
+
+subTwoNumbers(10, 7)
+
+function addAllNum(items: number[]): void{
+    const total = items.reduce((a, c)=> a + c, 0)
+    console.log(total)
+}
+
+addAllNum([5, 7, 9, 11, 3, 2, 1])
+
+console.log("Hello Abdullah")
+
+function formatGreeting(name: string, greeting: string){
+    return `${greeting}, ${name}`
+}
+
+const result = formatGreeting('Abdullah', 'The master')
+
+console.log(result)
