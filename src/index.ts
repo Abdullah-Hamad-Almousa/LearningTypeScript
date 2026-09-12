@@ -1,34 +1,32 @@
-//Type Aliases
+//Union Types
 
-type Rgb = [number, number, number]
+let id: number | string
 
-function getRandomColor(): Rgb {
+id = 1
+id = "one"
 
-    const r = Math.floor(Math.random() * 255)
-    const g = Math.floor(Math.random() * 255)
-    const b = Math.floor(Math.random() * 255)
+let email: string | null = null
 
-    return [r, g, b]
+email = 'bowser@mario-world.devil'
+email = null
+
+type Id = number | string
+let idTwo: Id
+
+idTwo = 'sadhjkbasda'
+idTwo = 5
+
+//Union Types pitfall
+
+function swap(id: Id): Id {
+
+// can only use props and methods common to
+// both number and string types
+// parseInt(id) -- > not allowed
+
+    //parseInt(id)
+
+    return id
 }
 
-const colorOne = getRandomColor()
-const colorTwo = getRandomColor()
-
-console.log(colorOne)
-console.log(colorTwo)
-
-type User = {
-    name: string,
-    score: number
-}
-
-const userOne: User = {
-    name: 'Bowser', score: 69
-}
-
-function formatUser(user: User) {
-    console.log(`${user.name} has score of: ${user.score}`)
-}
-
-formatUser(userOne)
-formatUser({name: 'Abdullah', score: 99.94})
+swap('5')
