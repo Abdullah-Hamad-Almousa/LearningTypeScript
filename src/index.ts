@@ -1,24 +1,27 @@
-//Any type
+//Tuples
 
-let age: any
+let person: [string, number, boolean] = ['Abdulah', 27, true]
 
-age = 30
-age = false
+//Tuples Examples
 
-let title
+let hl: [number, string, string, number] //22, '', '', 247
+hl = [200, '100%', '50%', 1]
 
-title = 25
-title = 'index'
+let xy : [number, number]
+xy = [97, 20]
 
-let things: any[] = ['hello', true, 27, null]
-
-things.push({id:123})
-
-function addTogether(value: any): any {
-    return value + value
+function useCoords(): [number, number] {
+    const  lat = 100
+    const long = 50
+    return [lat, long]
 }
 
-const resultOne = addTogether('Hello')
-const resultTwo = addTogether(3)
+const [lat, long] = useCoords()
 
-console.log(resultOne, "\t", resultTwo)
+//Tuples Names
+
+let user: [naem:string, age:number]
+
+user = ["abdullah", 27]
+
+console.log(user[0])
