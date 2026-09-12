@@ -1,44 +1,34 @@
-//Interface
+//Type Aliases
 
-interface Author {
+type Rgb = [number, number, number]
+
+function getRandomColor(): Rgb {
+
+    const r = Math.floor(Math.random() * 255)
+    const g = Math.floor(Math.random() * 255)
+    const b = Math.floor(Math.random() * 255)
+
+    return [r, g, b]
+}
+
+const colorOne = getRandomColor()
+const colorTwo = getRandomColor()
+
+console.log(colorOne)
+console.log(colorTwo)
+
+type User = {
     name: string,
-    avatar: string
+    score: number
 }
 
-const authorOne: Author = {
-    name: 'Bowser',
-    avatar: '/img/bowser.png'
+const userOne: User = {
+    name: 'Bowser', score: 69
 }
 
-interface Post {
-    title: string,
-    body: string,
-    tags: string[],
-    create_at: Date,
-    author: Author
+function formatUser(user: User) {
+    console.log(`${user.name} has score of: ${user.score}`)
 }
 
-const newPost: Post = {
-    title: 'My first post',
-    body: 'Something interesting',
-    tags: ['Gaming', 'tech'],
-    create_at: new Date(),
-    author: { //We can use a authorOne here but really liked to define a new one
-        name: 'Abdullah',
-        avatar: '/img/avatar.png'
-    }
-}
-
-//Function
-
-function createPost(post : Post): void{
-    console.log(`Created post ${post.title}, by ${post.author.name}`)
-}
-
-createPost(newPost)
-
-//With array
-
-let posts: Post[] = []
-
-posts.push(newPost)
+formatUser(userOne)
+formatUser({name: 'Abdullah', score: 99.94})
